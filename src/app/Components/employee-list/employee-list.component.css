@@ -1,0 +1,22 @@
+
+.employee-list{
+    max-height: 400px;
+    overflow: auto;
+}
+
+table {
+    width: 600px;
+    border: 1px solid #ccc;
+}
+
+table th,
+table td {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+table th:last-child,
+table td:last-child {
+    border-right: none;
+}

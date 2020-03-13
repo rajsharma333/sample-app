@@ -1,0 +1,20 @@
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span>Welcome to Employee Project</span>
+</div>
+
+<div class="content" role="main">
+
+  <div class="card-container">
+    <div class="card card-small" (click)="viewEmployeeList()" tabindex="0">
+      <span>{{viewEmployee}}</span>
+    </div>
+  </div>
+
+  
+  <div class="data-container">
+    <app-employee-list *ngIf="isShowEmployeeList" [employeeList]="employeeList"></app-employee-list>
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+
+<button type="button" (click)="addEmployee()">{{ buttonText }}</button>
+<h2>Employees List</h2>
+<!-- <mat-form-field>
+    <input 
+        type="text" 
+        placeholder="Choose one employee" 
+        matInput  
+        [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let employee of employeeList.data">
+            {{ employee.employee_name }}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field> -->
+<div class="employee-list" *ngIf="isShowList">
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <th>ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Employee Age</th>
+            <th>
+                <button type="button" >Action</button>
+            </th>
+        </tr>
+        <tr *ngFor="let employee of employeeList.data">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.employee_name }}</td>
+            <td>{{ employee.employee_salary }}</td>
+            <td>{{ employee.employee_age }}</td>
+            <td>
+                <button type="button" (click)="updateEmployee(employee.id)" >Update</button>
+                <button type="button" >Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="add-employee" *ngIf="!isShowList">
+    <app-add-employee [employeeID]="updateEmployeeID"></app-add-employee>
+</div>
